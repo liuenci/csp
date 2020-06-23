@@ -11,11 +11,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @create: 2020-06-23 19:03
  **/
 @Slf4j
-@SpringBootApplication(scanBasePackages = {"com.liuencier.csp"})
+@SpringBootApplication
 public class CspApplitionStarter {
 
     public static void main(String[] args) {
         SpringApplication.run(CspApplitionStarter.class, args);
-        log.info("Csp 启动成功...");
+        log.info("csp 启动成功...");
     }
 }
