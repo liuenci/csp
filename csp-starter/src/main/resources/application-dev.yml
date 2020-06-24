@@ -2,3 +2,9 @@ server:
   port: 8080
   servlet:
     context-path: /csp
+logging:
+  config: classpath:logback-spring.xml
+  pattern:
+    console: "%d - %msg%n"
+#  path: C:\logs
+  file: C:\logs\logback.log
