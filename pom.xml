@@ -23,12 +23,19 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring.cloud.version>Greenwich.SR1</spring.cloud.version>
+        <spring.boot.version>2.1.4.RELEASE</spring.boot.version>
         <junit.version>4.12</junit.version>
-        <lombok.version>1.18.12</lombok.version>
+        <lombok.version>1.16.22</lombok.version>
+        <fastjson.version>1.2.71</fastjson.version>
+        <common.lang3.version>3.10</common.lang3.version>
+        <jackson.version>2.11.0</jackson.version>
+        <codehaus.version>1.9.13</codehaus.version>
+        <mysql.version>5.1.47</mysql.version>
+        <druid.version>1.1.10</druid.version>
+        <mybatis.spring.version>1.3.2</mybatis.spring.version>
     </properties>
     <dependencyManagement>
         <dependencies>
-            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -39,7 +46,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.1.4.RELEASE</version>
+                <version>${spring.boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -47,19 +54,19 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.47</version>
+                <version>${mysql.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
-                <version>1.1.10</version>
+                <version>${druid.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>1.3.2</version>
+                <version>${mybatis.spring.version}</version>
             </dependency>
             <!-- https://mvnrepository.com/artifact/junit/junit -->
             <dependency>
@@ -73,19 +80,42 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
-                <scope>provided</scope>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+            <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
             <dependency>
-                <groupId>log4j</groupId>
-                <artifactId>log4j</artifactId>
-                <version>1.2.17</version>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
             <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-core</artifactId>
-                <version>1.2.3</version>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${common.lang3.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-asl</artifactId>
+                <version>${codehaus.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
