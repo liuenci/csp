@@ -7,12 +7,10 @@
 
 ``` lua
 csp
-├── csp-domain -- 数据库实体层以及相关model
-├── csp-service -- 具体的业务逻辑层
-├── csp-web -- 对接前端的接口
-├── csp-api -- 开放外部服务接口
-├── csp-utils -- 常用工具类
-└── csp-starter -- 核心启动类
+├── csp-admin -- 前端调用接口
+├── csp-admin-starter -- 服务启动入口
+├── csp-api -- 提供给第三方接口
+└── csp-core -- 具体实现
 ```
 ### 开发进度
 * 2020-06-23 项目初始化、接入web接口
