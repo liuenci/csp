@@ -9,12 +9,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>csp-api</module>
-        <module>csp-web</module>
-        <module>csp-utils</module>
-        <module>csp-domain</module>
-        <module>csp-service</module>
-        <module>csp-config</module>
-        <module>csp-starter</module>
+        <module>csp-admin</module>
+        <module>csp-admin-starter</module>
+        <module>csp-core</module>
     </modules>
     <!--    打包方式 pom-->
     <packaging>pom</packaging>
