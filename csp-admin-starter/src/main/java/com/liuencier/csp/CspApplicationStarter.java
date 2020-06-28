@@ -12,10 +12,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  **/
 @Slf4j
 @SpringBootApplication
-public class CspApplitionStarter {
+public class CspApplicationStarter {
 
     public static void main(String[] args) {
-        SpringApplication.run(CspApplitionStarter.class, args);
+        SpringApplication.run(CspApplicationStarter.class, args);
         log.info("csp 启动成功...");
     }
 }

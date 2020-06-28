@@ -8,3 +8,18 @@ logging:
     console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n'
   root:
    level: DEBUG
+
+spring:
+  application:
+    name: csp
+  data:
+    mongodb:
+      uri: mongodb://admin_tax:qZFM4mKYstY@mongodb001-repluat001.gz.cvte.cn:27017,mongodb002-repluat001.gz.cvte.cn:27017,mongodb003-repluat001.gz.cvte.cn:27017/tax?replicaSet=Repluat001
+      enabled: true
+
+mongodb:
+  conf:
+    maxWaitTime: 120000
+    connectTimeout: 10000
+    connectionsPerHost: 10
+    socketTimeout: 60000
