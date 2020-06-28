@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>csp-web</artifactId>
+    <artifactId>csp-admin</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -17,12 +17,7 @@
         </dependency>
         <dependency>
             <groupId>com.liuencier</groupId>
-            <artifactId>csp-domain</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.liuencier</groupId>
-            <artifactId>csp-config</artifactId>
+            <artifactId>csp-core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
