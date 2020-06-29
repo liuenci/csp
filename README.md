@@ -1,7 +1,7 @@
 # csp
 ## 前言
 
-`csp`项目致力于打造一个新手入门SpringCloud的项目，采用现阶段流行技术实现。
+`csp`全称意思:cier scaffold project，致力于打造标准工程脚手架。
 
 ### 组织结构
 
