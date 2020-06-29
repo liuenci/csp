@@ -10,4 +10,6 @@ public interface IMongoUserService {
 
     User findOne(String userId);
 
+    User transSave(User user);
+
 }

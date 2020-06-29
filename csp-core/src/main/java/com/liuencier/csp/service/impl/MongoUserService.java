@@ -7,6 +7,8 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @program: csp
@@ -29,5 +31,16 @@ public class MongoUserService implements IMongoUserService {
         Query query = new Query();
         query.addCriteria(Criteria.where("userId").is(userId));
         return mongoTemplate.findOne(query, User.class);
+    }
+
+    @Override
+//    @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
+    public User transSave(User user) {
+        mongoTemplate.save(user);
+
+        int i = 1 / 0;
+        user.setUserName("测试名称2");
+
+        return mongoTemplate.save(user);
     }
 }
