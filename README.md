@@ -1,7 +1,7 @@
 # csp
 ## 前言
 
-`csp`全称意思:cier scaffold project，致力于打造标准工程脚手架。
+`csp`:`cier scaffold project`，致力于打造标准工程脚手架。
 
 ### 组织结构
 
