@@ -1,6 +1,6 @@
-package com.liuencier.csp.web;
+package com.liuencier.csp.admin.demo;
 
-import com.liuencier.csp.domain.common.CommonResult;
+import com.liuencier.csp.common.CommonResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

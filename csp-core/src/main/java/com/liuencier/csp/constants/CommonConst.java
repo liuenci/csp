@@ -1,4 +1,4 @@
-package com.liuencier.csp.domain.constant;
+package com.liuencier.csp.constants;
 
 public interface CommonConst {
     String CODE_SUCCESS = "200";

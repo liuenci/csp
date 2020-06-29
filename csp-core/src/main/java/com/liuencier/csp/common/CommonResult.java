@@ -1,11 +1,10 @@
-package com.liuencier.csp.domain.common;
+package com.liuencier.csp.common;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
 import lombok.Data;
 
 import java.io.Serializable;
 
-import static com.liuencier.csp.domain.constant.CommonConst.CODE_SUCCESS;
+import static com.liuencier.csp.constants.CommonConst.CODE_SUCCESS;
 
 /**
  * @program: csp
