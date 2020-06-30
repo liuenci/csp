@@ -3,8 +3,10 @@ package com.liuencier.csp;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @program: csp
@@ -13,8 +15,8 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  * @create: 2020-06-23 19:03
  **/
 @Slf4j
-@MapperScan("com.liuencier.csp.core.mappers")
 @SpringBootApplication
+@EnableAutoConfiguration
 public class CspApplicationStarter {
 
     public static void main(String[] args) {

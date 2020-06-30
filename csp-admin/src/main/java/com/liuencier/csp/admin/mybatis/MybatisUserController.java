@@ -26,4 +26,9 @@ public class MybatisUserController {
     public CommonResult save(@RequestBody User user) {
         return CommonResult.success(iUserService.save(user));
     }
+
+    @PostMapping("/trans/save")
+    public CommonResult transSave(@RequestBody User user) {
+        return CommonResult.success(iUserService.transSave(user));
+    }
 }

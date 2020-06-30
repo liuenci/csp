@@ -1,9 +1,5 @@
 package com.liuencier.csp.core.config;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.aop.Advisor;
@@ -13,8 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.MongoTransactionManager;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.interceptor.*;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @program: csp
@@ -25,22 +27,17 @@ import org.springframework.transaction.interceptor.*;
 @Slf4j
 @Aspect
 @Configuration
-public class TransactionConfig {
+public class MySQLTransactionConfig {
 
-    private static final String AOP_POINTCUT_EXPRESSION = "execution(* com.liuencier.csp.core.service.mongo.impl.*.*(..))";
-    /**
-     * 配置多个切入点表达式
-     */
-    // private static final String AOP_POINTCUT_EXPRESSION = "execution(* com.platform.service.impl.*.*(..))" +
-    //         "                     || execution(* com.platform.generator.aspect.*.*(..))";
+    private static final String AOP_POINTCUT_EXPRESSION = "execution(* com.liuencier.csp.core.service.mybatis.impl.*.*(..))";
 
     private static final int TX_METHOD_TIMEOUT = 5000;
 
     @Autowired
-    private MongoTransactionManager mongoTransactionManager;
+    private PlatformTransactionManager platformTransactionManager;
 
     @Bean
-    public TransactionInterceptor txAdvice() {
+    public TransactionInterceptor mysqltxAdvice() {
         /*事务管理规则，声明具备事务管理的方法名**/
         NameMatchTransactionAttributeSource source = new NameMatchTransactionAttributeSource();
         /*只读事务，不做更新操作*/
@@ -83,33 +80,18 @@ public class TransactionConfig {
         txMap.put("*", requiredTx);
 
         source.setNameMap(txMap);
-        TransactionInterceptor txAdvice = new TransactionInterceptor(mongoTransactionManager, source);
+        TransactionInterceptor txAdvice = new TransactionInterceptor(platformTransactionManager, source);
         return txAdvice;
     }
 
     @Bean
-    public Advisor txAdviceAdvisor() {
+    public Advisor mysqltxAdviceAdvisor() {
         /* 声明切点的面：切面就是通知和切入点的结合。通知和切入点共同定义了关于切面的全部内容——它的功能、在何时和何地完成其功能* */
         AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
         /*声明和设置需要拦截的方法,用切点语言描写**/
         pointcut.setExpression(AOP_POINTCUT_EXPRESSION);
         /*设置切面=切点pointcut+通知TxAdvice**/
-        return new DefaultPointcutAdvisor(pointcut, txAdvice());
+        return new DefaultPointcutAdvisor(pointcut, mysqltxAdvice());
     }
-/**
- @Pointcut("execution(* com.platform.service.impl.*.*(..))")
- public void logPointCut() {
- }
- @Around("logPointCut()") public Object around(ProceedingJoinPoint point) throws Throwable {
- //long beginTime = System.currentTimeMillis();
- //执行方法
- // Object result = point.proceed();
- //执行时长(毫秒)
- //  long time = System.currentTimeMillis() - beginTime;
- //保存日志
- log.info(" @Around*******************"+"     dong    "+"********************** @Around");
- return "";
- }
- **/
 
 }
