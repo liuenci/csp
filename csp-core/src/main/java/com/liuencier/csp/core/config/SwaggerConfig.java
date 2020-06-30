@@ -1,4 +1,4 @@
-package com.liuencier.csp.config;
+package com.liuencier.csp.core.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

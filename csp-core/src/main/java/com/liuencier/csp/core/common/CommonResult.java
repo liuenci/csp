@@ -1,10 +1,10 @@
-package com.liuencier.csp.common;
+package com.liuencier.csp.core.common;
 
 import lombok.Data;
 
 import java.io.Serializable;
 
-import static com.liuencier.csp.constants.CommonConst.CODE_SUCCESS;
+import static com.liuencier.csp.core.constants.CommonConst.CODE_SUCCESS;
 
 /**
  * @program: csp

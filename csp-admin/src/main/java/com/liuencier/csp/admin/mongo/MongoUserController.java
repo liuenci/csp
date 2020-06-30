@@ -1,8 +1,8 @@
 package com.liuencier.csp.admin.mongo;
 
-import com.liuencier.csp.common.CommonResult;
-import com.liuencier.csp.mongo.User;
-import com.liuencier.csp.service.IMongoUserService;
+import com.liuencier.csp.core.common.CommonResult;
+import com.liuencier.csp.core.entity.mongo.User;
+import com.liuencier.csp.core.service.mongo.IMongoUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @Api("mongo user 控制器")
 @RestController
 @RequestMapping("mongo/user")
-public class UserController {
+public class MongoUserController {
     @Autowired
     private IMongoUserService mongoUserService;
 

@@ -1,4 +1,4 @@
-package com.liuencier.csp.utils;
+package com.liuencier.csp.core.utils;
 
 /**
  * @program: csp

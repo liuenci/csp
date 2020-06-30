@@ -1,14 +1,12 @@
-package com.liuencier.csp.service.impl;
+package com.liuencier.csp.core.service.mongo.impl;
 
-import com.liuencier.csp.mongo.User;
-import com.liuencier.csp.service.IMongoUserService;
+import com.liuencier.csp.core.entity.mongo.User;
+import com.liuencier.csp.core.service.mongo.IMongoUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @program: csp

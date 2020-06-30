@@ -1,4 +1,4 @@
-package com.liuencier.csp.mongo;
+package com.liuencier.csp.core.entity.mongo;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

@@ -1,4 +1,4 @@
-package com.liuencier.csp.config;
+package com.liuencier.csp.core.config;
 
 import com.mongodb.MongoClientOptions;
 import com.mongodb.MongoClientURI;

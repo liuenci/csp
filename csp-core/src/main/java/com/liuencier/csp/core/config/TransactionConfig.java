@@ -1,14 +1,11 @@
-package com.liuencier.csp.config;
+package com.liuencier.csp.core.config;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 import lombok.extern.slf4j.Slf4j;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.aop.Advisor;
 import org.springframework.aop.aspectj.AspectJExpressionPointcut;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
@@ -16,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.MongoTransactionManager;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.interceptor.*;
 
@@ -31,7 +27,7 @@ import org.springframework.transaction.interceptor.*;
 @Configuration
 public class TransactionConfig {
 
-    private static final String AOP_POINTCUT_EXPRESSION = "execution(* com.liuencier.csp.service.impl.*.*(..))";
+    private static final String AOP_POINTCUT_EXPRESSION = "execution(* com.liuencier.csp.core.service.mongo.impl.*.*(..))";
     /**
      * 配置多个切入点表达式
      */

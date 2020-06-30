@@ -1,6 +1,7 @@
 package com.liuencier.csp;
 
 import lombok.extern.slf4j.Slf4j;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -12,7 +13,8 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  * @create: 2020-06-23 19:03
  **/
 @Slf4j
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+@MapperScan("com.liuencier.csp.core.mappers")
+@SpringBootApplication
 public class CspApplicationStarter {
 
     public static void main(String[] args) {

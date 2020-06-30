@@ -1,5 +1,4 @@
-package com.liuencier.csp.utils;
-import com.alibaba.fastjson.JSONObject;
+package com.liuencier.csp.core.utils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.codehaus.jackson.map.DeserializationConfig;
