@@ -31,8 +31,6 @@ public class SwaggerConfig {
                         .description("csp在线接口文档")
                         .version("1.0")
                         .contact(new Contact("liuencier","liuenci.cn","liuencier@gmail.com"))
-                        .license("The Apache License")
-                        .licenseUrl("http://www.baidu.com")
                         .build());
     }
 }
