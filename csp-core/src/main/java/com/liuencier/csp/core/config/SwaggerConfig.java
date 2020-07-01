@@ -30,7 +30,7 @@ public class SwaggerConfig {
                         .title("SpringBoot整合Swagger")
                         .description("csp在线接口文档")
                         .version("1.0")
-                        .contact(new Contact("liuencier","liuenci.cn","liuencier@gmail.com"))
+                        .contact(new Contact("liuencier","","liuencier@gmail.com"))
                         .build());
     }
 }
