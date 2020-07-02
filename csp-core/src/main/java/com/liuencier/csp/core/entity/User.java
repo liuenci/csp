@@ -1,10 +1,12 @@
-package com.liuencier.csp.core.entity.mybatis;
+package com.liuencier.csp.core.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @ApiModel(value="com-liuencier-csp-core-entity-mybatis-CspUser")
 @Data
@@ -13,6 +15,7 @@ public class User implements Serializable {
     * 用户ID
     */
     @Id
+    @GeneratedValue(generator = "JDBC")
     @ApiModelProperty(value="用户ID")
     private Long userId;
 

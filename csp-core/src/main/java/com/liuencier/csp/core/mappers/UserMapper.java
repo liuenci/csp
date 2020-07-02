@@ -1,6 +1,6 @@
 package com.liuencier.csp.core.mappers;
 
-import com.liuencier.csp.core.entity.mybatis.User;
+import com.liuencier.csp.core.entity.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Long userId);

@@ -12,24 +12,12 @@ logging:
 spring:
   application:
     name: csp
-  data:
-    mongodb:
-      uri: mongodb://admin_tax:qZFM4mKYstY@mongodb001-repluat001.gz.cvte.cn:27017,mongodb002-repluat001.gz.cvte.cn:27017,mongodb003-repluat001.gz.cvte.cn:27017/tax?replicaSet=Repluat001
-      enabled: true
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/csp?characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false
     username: root
     password: 123456
-    driver-class-name: com.mysql.jdbc.Driver # 根据数据库不同配置
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:
   mapper-locations: classpath:mappers/*Mapper.xml
   type-aliases-package: com.liuencier.csp.core.mappers
-
-
-mongodb:
-  conf:
-    maxWaitTime: 120000
-    connectTimeout: 10000
-    connectionsPerHost: 10
-    socketTimeout: 60000

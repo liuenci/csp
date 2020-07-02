@@ -1,13 +1,10 @@
 package com.liuencier.csp.admin.mybatis;
 
 import com.liuencier.csp.core.common.CommonResult;
-import com.liuencier.csp.core.entity.mybatis.User;
-import com.liuencier.csp.core.service.mybatis.IUserService;
+import com.liuencier.csp.core.entity.User;
+import com.liuencier.csp.core.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @program: csp
@@ -20,15 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class MybatisUserController {
 
     @Autowired
-    private IUserService iUserService;
+    private UserService userService;
 
     @PostMapping("/save")
     public CommonResult save(@RequestBody User user) {
-        return CommonResult.success(iUserService.save(user));
+        return CommonResult.success(userService.save(user));
     }
 
     @PostMapping("/trans/save")
     public CommonResult transSave(@RequestBody User user) {
-        return CommonResult.success(iUserService.transSave(user));
+        return CommonResult.success(userService.transSave(user));
+    }
+
+    @GetMapping("/find/{userId}")
+    public CommonResult find(@PathVariable("userId") Long userId) {
+        return CommonResult.success(userService.find(userId));
     }
 }

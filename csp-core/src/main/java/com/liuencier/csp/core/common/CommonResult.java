@@ -22,6 +22,7 @@ public final class CommonResult<T> implements Serializable {
         CommonResult<T> result = new CommonResult<>();
         result.code = CODE_SUCCESS;
         result.data = data;
+        result.msg = "操作成功";
         return result;
     }
 

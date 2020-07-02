@@ -16,7 +16,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  **/
 @Slf4j
 @SpringBootApplication
-@EnableAutoConfiguration
 public class CspApplicationStarter {
 
     public static void main(String[] args) {

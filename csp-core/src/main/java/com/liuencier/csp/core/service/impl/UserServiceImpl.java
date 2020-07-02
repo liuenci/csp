@@ -1,8 +1,9 @@
-package com.liuencier.csp.core.service.mybatis.impl;
+package com.liuencier.csp.core.service.impl;
 
-import com.liuencier.csp.core.entity.mybatis.User;
+import com.liuencier.csp.core.entity.User;
 import com.liuencier.csp.core.mappers.UserMapper;
-import com.liuencier.csp.core.service.mybatis.IUserService;
+import com.liuencier.csp.core.service.UserService;
+import com.liuencier.csp.core.utils.IdWorker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -15,19 +16,23 @@ import org.springframework.transaction.annotation.Transactional;
  * @create: 2020-06-29 19:26
  **/
 @Service
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
 
     @Override
     public User save(User user) {
-        userMapper.insert(user);
+        if (user.getUserId() == null) {
+            user.setUserId(IdWorker.getId());
+            userMapper.insert(user);
+        } else {
+            userMapper.updateByPrimaryKey(user);
+        }
         return user;
     }
 
     @Override
-    @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
     public User transSave(User user) {
         userMapper.insert(user);
 
@@ -36,5 +41,10 @@ public class UserServiceImpl implements IUserService {
         userMapper.insert(user);
 
         return user;
+    }
+
+    @Override
+    public User find(Long userId) {
+        return userMapper.selectByPrimaryKey(userId);
     }
 }
