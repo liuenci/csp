@@ -12,8 +12,7 @@ csp
 ├── csp-api -- 提供给第三方接口
 └── csp-core -- 具体实现
 ```
-### 开发进度
-* 2020-06-23 项目初始化、接入web接口
-* 2020-06-24 接入常用工具类、增加Logback日志框架
-* 2020-06-28 完成小功能框架搭建
-* 2020-06-29 完成swagger、mongodb、mongodb切面事务接入
+### 版本说明
+* SpringBoot
+* mongodb && mongodb 事务
+* web接口
