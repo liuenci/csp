@@ -35,7 +35,7 @@ public class MySQLTransactionConfig {
     private PlatformTransactionManager platformTransactionManager;
 
     @Bean
-    public TransactionInterceptor mysqltxAdvice() {
+    public TransactionInterceptor mysqlTransactionInterceptor() {
         /*事务管理规则，声明具备事务管理的方法名**/
         NameMatchTransactionAttributeSource source = new NameMatchTransactionAttributeSource();
         /*只读事务，不做更新操作*/
@@ -78,18 +78,18 @@ public class MySQLTransactionConfig {
         txMap.put("*", requiredTx);
 
         source.setNameMap(txMap);
-        TransactionInterceptor txAdvice = new TransactionInterceptor(platformTransactionManager, source);
-        return txAdvice;
+        TransactionInterceptor transactionInterceptor = new TransactionInterceptor(platformTransactionManager, source);
+        return transactionInterceptor;
     }
 
     @Bean
-    public Advisor mysqltxAdviceAdvisor() {
+    public Advisor advisor() {
         /* 声明切点的面：切面就是通知和切入点的结合。通知和切入点共同定义了关于切面的全部内容——它的功能、在何时和何地完成其功能* */
         AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
         /*声明和设置需要拦截的方法,用切点语言描写**/
         pointcut.setExpression(AOP_POINTCUT_EXPRESSION);
         /*设置切面=切点pointcut+通知TxAdvice**/
-        return new DefaultPointcutAdvisor(pointcut, mysqltxAdvice());
+        return new DefaultPointcutAdvisor(pointcut, mysqlTransactionInterceptor());
     }
 
 }
