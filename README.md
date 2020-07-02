@@ -19,3 +19,9 @@ csp
 * 2020-06-29 完成swagger、mongodb、mongodb切面事务接入
 * 2020-06-30 mybatis接入
 * 2020-07-02 切换 v1.0.2.mongo 版本分支、mybatis 事务接入、Id生成器接入
+
+### 版本说明
+* SpringBoot
+* MyBatis && 切面事务
+* swagger 文档
+* 可以拿来做一些毕设的基础工程
