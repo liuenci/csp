@@ -14,7 +14,7 @@ spring:
     name: csp
   data:
     mongodb:
-      uri: mongodb://admin_tax:qZFM4mKYstY@mongodb001-repluat001.gz.cvte.cn:27017,mongodb002-repluat001.gz.cvte.cn:27017,mongodb003-repluat001.gz.cvte.cn:27017/tax?replicaSet=Repluat001
+      uri: user.uri # 替换成自己的URI
       enabled: true
 
 mongodb:
