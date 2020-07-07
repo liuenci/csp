@@ -32,3 +32,5 @@ csp
     * mybatis 事务接入
     * Id生成器接入
     * hikari连接池接入
+* 2020-07-07
+    * 接入SpringUtils工具类
