@@ -34,3 +34,5 @@ csp
     * hikari连接池接入
 * 2020-07-07
     * 接入SpringUtils工具类
+* 2020-07-09
+    * 接入RestTemplateUtils工具类
