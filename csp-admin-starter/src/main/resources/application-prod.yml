@@ -1,0 +1,35 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /csp
+logging:
+  config: classpath:logback-spring.xml
+  pattern:
+    console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n'
+  root:
+   level: DEBUG
+
+spring:
+  application:
+    name: csp
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/csp?characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource # 连接池类型
+    hikari:
+      minimum-idle: 5 # 最小空闲连接数量
+      idle-timeout: 180000 # 空闲连接存活最大时间，默认 10 分钟
+      maximum-pool-size: 10 # 连接池最大连接数，默认 10
+      auto-commit: true # 是否自动提交
+      pool-name: CspHikariCP # 连接池名字
+      max-lifetime: 1800000 # 最长生命周期，默认30分钟
+      connection-timeout: 30000 # 数据库连接超时时间，默认 30s
+      connection-test-query: select 1
+
+mybatis:
+  mapper-locations: classpath:mappers/*Mapper.xml
+  type-aliases-package: com.liuencier.csp.core.mappers
+
+profiles: prod
