@@ -35,9 +35,16 @@
         <druid.version>1.1.16</druid.version>
         <persistence.api.version>1.0</persistence.api.version>
         <hutool.version>5.3.4</hutool.version>
+        <easyexcel.version>2.1.6</easyexcel.version>
     </properties>
     <dependencyManagement>
         <dependencies>
+            <!-- https://mvnrepository.com/artifact/com.alibaba/easyexcel -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
             <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
