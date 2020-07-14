@@ -24,7 +24,7 @@ import java.util.Map;
  **/
 @Slf4j
 @Aspect
-@Configuration
+//@Configuration
 public class MySQLTransactionConfig {
 
     private static final String AOP_POINTCUT_EXPRESSION = "execution(* com.liuencier.csp.core.service.impl.*.*(..))";
