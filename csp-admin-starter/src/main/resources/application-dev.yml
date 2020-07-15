@@ -38,6 +38,7 @@ spring:
         retry:
           enabled: false
     publisher-confirms: true
+    publisher-returns: true
 
 mybatis:
   mapper-locations: classpath:mappers/*Mapper.xml

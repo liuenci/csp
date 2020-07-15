@@ -25,6 +25,6 @@ public class RabbitSender {
     public void send() {
         String context = "hello " + DateUtils.format(new Date(), DateUtils.DEFAULT_PATTERN);
         log.info("Sender : {}", context);
-        this.amqpTemplate.convertAndSend("rabbit_queue_demo", context);
+        amqpTemplate.convertAndSend("rabbit_queue_demo", context);
     }
 }

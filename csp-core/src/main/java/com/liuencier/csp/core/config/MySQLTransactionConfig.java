@@ -8,6 +8,7 @@ import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.interceptor.*;
@@ -24,7 +25,7 @@ import java.util.Map;
  **/
 @Slf4j
 @Aspect
-//@Configuration
+@Configuration
 public class MySQLTransactionConfig {
 
     private static final String AOP_POINTCUT_EXPRESSION = "execution(* com.liuencier.csp.core.service.impl.*.*(..))";
@@ -91,5 +92,6 @@ public class MySQLTransactionConfig {
         /*设置切面=切点pointcut+通知TxAdvice**/
         return new DefaultPointcutAdvisor(pointcut, mysqlTransactionInterceptor());
     }
+
 
 }

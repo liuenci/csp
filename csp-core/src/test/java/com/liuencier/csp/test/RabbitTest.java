@@ -14,9 +14,9 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @author: liuenci
  * @create: 2020-07-14 20:16
  **/
-@ActiveProfiles("dev")
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = CspApplicationTest.class)
+//@ActiveProfiles("dev")
+//@RunWith(SpringRunner.class)
+//@SpringBootTest(classes = CspApplicationTest.class)
 public class RabbitTest {
 
     @Autowired
