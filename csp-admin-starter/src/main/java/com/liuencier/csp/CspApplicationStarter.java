@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @create: 2020-06-23 19:03
  **/
 @Slf4j
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.liuencier.csp")
 public class CspApplicationStarter {
 
     public static void main(String[] args) {
