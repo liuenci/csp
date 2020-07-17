@@ -27,21 +27,9 @@ spring:
       max-lifetime: 1800000 # 最长生命周期，默认30分钟
       connection-timeout: 30000 # 数据库连接超时时间，默认 30s
       connection-test-query: select 1
-  rabbitmq:
-    host: rmq-uat.gz.cvte.cn
-    port: 5672
-    username: tax
-    password: pR2tFPA3ZW5F
-    virtual-host: /tax
-#    listener:
-#      direct:
-#        retry:
-#          enabled: false
-#    publisher-confirms: true
-#    publisher-returns: true
 
 mybatis:
   mapper-locations: classpath:mappers/*Mapper.xml
   type-aliases-package: com.liuencier.csp.core.mappers
 
-profiles: dev
+profiles: prod
