@@ -11,4 +11,8 @@ public class StringUtils {
     public static String upperCase(String str) {
         return str == null ? null : str.toUpperCase();
     }
+
+    public static String lowerCase(String str) {
+        return str == null ? null : str.toLowerCase();
+    }
 }
