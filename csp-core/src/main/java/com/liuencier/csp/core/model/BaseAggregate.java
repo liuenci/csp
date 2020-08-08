@@ -1,5 +1,7 @@
 package com.liuencier.csp.core.model;
 
+import com.liuencier.csp.core.event.DomainEvent;
+
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;

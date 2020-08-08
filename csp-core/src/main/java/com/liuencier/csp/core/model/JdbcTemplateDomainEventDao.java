@@ -1,7 +1,10 @@
 package com.liuencier.csp.core.model;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.liuencier.csp.core.event.DomainEvent;
+import com.liuencier.csp.core.event.DomainEventDao;
 import com.liuencier.csp.core.utils.JsonUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -19,7 +22,7 @@ import static com.google.common.collect.Maps.newHashMap;
  * @author: liuenci
  * @create: 2020-08-08 22:57
  **/
-public class JdbcTemplateDomainEventDao implements DomainEventDao{
+public class JdbcTemplateDomainEventDao implements DomainEventDao {
     private final NamedParameterJdbcTemplate jdbcTemplate;
 
     public JdbcTemplateDomainEventDao(NamedParameterJdbcTemplate jdbcTemplate) {
@@ -73,5 +76,17 @@ public class JdbcTemplateDomainEventDao implements DomainEventDao{
     public void deleteAll() {
         String sql = "DELETE FROM DOMAIN_EVENT;";
         jdbcTemplate.update(sql, newHashMap());
+    }
+
+    private RowMapper<DomainEvent> eventMapper(ObjectMapper objectMapper) {
+        RowMapper<DomainEvent> content = (rs, rowNum) -> {
+            try {
+                return objectMapper.readValue(rs.getString("JSON_CONTENT"), DomainEvent.class);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+            return null;
+        };
+        return content;
     }
 }

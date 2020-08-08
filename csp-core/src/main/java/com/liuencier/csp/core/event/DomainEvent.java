@@ -1,4 +1,4 @@
-package com.liuencier.csp.core.model;
+package com.liuencier.csp.core.event;
 
 import com.liuencier.csp.core.utils.UuidGenerator;
 import lombok.Getter;
