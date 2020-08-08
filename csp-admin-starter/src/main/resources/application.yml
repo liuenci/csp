@@ -1,3 +1,9 @@
 spring:
   profiles:
     active: @activatedProperties@
+
+buildNumber: unknown
+buildTime: unknown
+gitRevision: unknown
+gitBranch: master
+appName: csp
