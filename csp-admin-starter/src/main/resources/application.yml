@@ -1,3 +1,10 @@
 spring:
   profiles:
     active: @activatedProperties@
+
+# 这里可以使用 ${buildNumber} 形式，通过鲸云注入配置
+buildNumber: unknown
+buildTime: unknown
+gitRevision: unknown
+gitBranch: master
+appName: csp
