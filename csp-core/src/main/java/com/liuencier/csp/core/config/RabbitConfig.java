@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @author: liuenci
  * @create: 2020-07-14 19:51
  **/
-@Configuration
+//@Configuration
 public class RabbitConfig {
 
     @Bean
