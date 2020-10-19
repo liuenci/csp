@@ -36,9 +36,16 @@
         <persistence.api.version>1.0</persistence.api.version>
         <hutool.version>5.3.4</hutool.version>
         <easyexcel.version>2.1.6</easyexcel.version>
+        <httpclient.version>4.5.5</httpclient.version>
     </properties>
     <dependencyManagement>
         <dependencies>
+            <!-- apache httpclient组件 -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.itextpdf</groupId>

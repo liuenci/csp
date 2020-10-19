@@ -124,6 +124,11 @@
             <groupId>com.itextpdf</groupId>
             <artifactId>itextpdf</artifactId>
         </dependency>
+        <!-- apache httpclient组件 -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <resources>
