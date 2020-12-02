@@ -28,11 +28,11 @@ spring:
       connection-timeout: 30000 # 数据库连接超时时间，默认 30s
       connection-test-query: select 1
   rabbitmq:
-    host: rmq-uat.gz.cvte.cn
+    host: rmq-dev.gz.csp.cn
     port: 5672
-    username: tax
+    username: csp
     password: pR2tFPA3ZW5F
-    virtual-host: /tax
+    virtual-host: /csp
 #    listener:
 #      direct:
 #        retry:
